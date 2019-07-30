@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Table, TableDescription } from '@ng-holistic/clr-list';
+import { Table } from '@ng-holistic/clr-list';
 import { Subject, timer } from 'rxjs';
 import { mapTo } from 'rxjs/operators';
 
 // Provide table UI definition in js object
-const table: TableDescription = {
+const definition: Table.Definition = {
     cols: [
         {
             id: 'title',            
@@ -45,7 +45,7 @@ const dataProvider: Table.Data.DataProvider = {
 
 @Component({
   selector: 'my-table',
-  template: `<hlc-clr-table [table]="table" [dataProvider]="dataProvider">
+  template: `<hlc-clr-table [definition]="definition" [dataProvider]="dataProvider">
     <!-- use hlcClrCustomCell to render any component inside custom cell template -->
     <!-- use let-val for binding to the current cell value -->
     <!-- use let-row for binding to the current row -->
@@ -54,6 +54,6 @@ const dataProvider: Table.Data.DataProvider = {
   </hlc-clr-table>`
 })
 export class TableComponent  {
-  table = table;
+  definition = definition;
   dataProvider = dataProvider;
 }
