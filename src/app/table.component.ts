@@ -54,6 +54,6 @@ const dataProvider: Table.Data.DataProvider = {
   </hlc-clr-table>`
 })
 export class TableComponent  {
-  definition = definition;
-  dataProvider = dataProvider;
+  readonly definition = definition;
+  readonly dataProvider = dataProvider;
 }
